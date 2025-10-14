@@ -17,7 +17,7 @@ def load_parquet_dataset(file_path, target_column):
     return torch.tensor(X, dtype=torch.float32), torch.tensor(y, dtype=torch.float32)
 
 # Example usage
-X, y = load_parquet_dataset("Data/V24-2025__0001.parquet", target_column="TempSaug [°C]")
+X, y = load_parquet_dataset("../Data/V24-2025__0001.parquet", target_column="TempSaug [°C]")
 
 # -----------------------------
 # 2. Prepare DataLoader
