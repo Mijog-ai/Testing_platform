@@ -68,7 +68,7 @@ train_loader = DataLoader(TensorDataset(
     torch.tensor(y_train, dtype=torch.long)
 ), batch_size=32, shuffle=True)
 
-for epoch in range(10):
+for epoch in range(15):
     total_loss = 0
     for inputs, targets in train_loader:
         optimizer.zero_grad()
@@ -98,7 +98,7 @@ print("✅ Models trained and saved.")
 # -----------------------------
 # 5. Load models and evaluate on new data
 # -----------------------------
-new_data_path = "../Data/new_data.parquet"  # replace with actual new dataset
+new_data_path = "../Data/V24-2025__0009.parquet"  # replace with actual new dataset
 new_df = pd.read_parquet(new_data_path).fillna(0)
 
 X_new = new_df.drop(columns=[target_column]).values
